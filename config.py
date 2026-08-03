@@ -3,7 +3,7 @@ import os
 # Cadena de conexión a la base Postgres de Supabase.
 # Usar la connection string "directa" (puerto 5432), no el pooler,
 # ya que este servicio corre una vez al día y no necesita pooling.
-SUPABASE_DB_URL = os.environ["SUPABASE_DB_URL"]
+SUPABASE_DB_URL = SUPABASE_DB_URL = os.environ.get("SUPABASE_DB_URL", "https://dlejozthzgnbfbqjuejo.supabase.co")
 
 if not SUPABASE_DB_URL:
     raise ValueError("Falta configurar la variable de entorno SUPABASE_DB_URL")
