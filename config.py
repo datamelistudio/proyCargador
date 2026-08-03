@@ -5,6 +5,9 @@ import os
 # ya que este servicio corre una vez al día y no necesita pooling.
 SUPABASE_DB_URL = os.environ["SUPABASE_DB_URL"]
 
+if not SUPABASE_DB_URL:
+    raise ValueError("Falta configurar la variable de entorno SUPABASE_DB_URL")
+
 # Sitio de Mercado Libre (MLA = Argentina)
 SITE_ID = os.environ.get("SITE_ID", "MLA")
 
