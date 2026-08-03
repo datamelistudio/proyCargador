@@ -21,7 +21,8 @@ def main():
     if not config.CATEGORY_IDS:
         log.error("No hay categorías configuradas en la variable CATEGORY_IDS. Abortando.")
         sys.exit(1)
-
+        
+    print(f"DEBUG: La URL recibida es: {config.SUPABASE_DB_URL}")
     db = Database(config.SUPABASE_DB_URL)
     ml = MercadoLibreClient(site_id=config.SITE_ID)
 
