@@ -1,0 +1,8 @@
+[build]
+builder = "NIXPACKS"
+
+[deploy]
+startCommand = "python main.py"
+# Corre todos los días a las 09:00 UTC (06:00 hora Argentina)
+cronSchedule = "0 9 * * *"
+restartPolicyType = "NEVER"
