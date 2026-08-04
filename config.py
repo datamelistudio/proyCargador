@@ -3,7 +3,6 @@ import urllib.parse
 from db import Database
 
 # 1. Obtención de variables de entorno con valores por defecto seguros
-SUPABASE_DB_URL = os.getenv("SUPABASE_DB_URL")
 PROJECT_REF = os.getenv("PROJECT_REF")
 DB_PASSWORD = os.getenv("DB_PASSWORD")
 
