@@ -10,7 +10,7 @@ SUPABASE_DB_URL = os.getenv("SUPABASE_DB_URL")
 PROJECT_REF = os.getenv("PROJECT_REF")    # Tu ID de proyecto
 DB_PASSWORD = os.getenv("DB_PASSWORD")
 
-password_escaped = urllib.parse.quote_plus(DB_PASSWORD)
+password_escaped = urllib.parse.quote_plus(str(DB_PASSWORD))
 
 # Si usas POOLER, el usuario DEBE ser postgres.PROJECT_REF
 dsn = f"postgresql://postgres.{PROJECT_REF}:{password_escaped}@aws-0-ca-central-1.pooler.supabase.com:5432/postgres"
