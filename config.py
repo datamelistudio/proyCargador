@@ -32,7 +32,7 @@ print("¿Hay contraseña?:", bool(DB_PASS))
 
 db = psycopg2.connect(
         host=DB_HOST, database=DB_NAME,
-        user="postgres.dlejozthzgnbfbqjuejo.tx", password=DB_PASS, port=DB_PORT,
+        user="postgres.dlejozthzgnbfbqjuejo", password=DB_PASS, port=DB_PORT,
         connect_timeout=10,
         sslmode="require",
         options="-c search_path=public --project="dlejozthzgnbfbqjuejo")
