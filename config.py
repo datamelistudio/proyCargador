@@ -24,6 +24,9 @@ DB_USER="postgres.dlejozthzgnbfbqjuejo"
 # Escapar la contraseña si contiene caracteres especiales
 DB_PASS = urllib.parse.quote_plus(RAW_PASS)
 
+print("Usuario usado:", DB_USER)
+print("¿Hay contraseña?:", bool(DB_PASS))
+
 # 4. Conexión a la base de datos
 db = psycopg2.connect(
     host=DB_HOST,
