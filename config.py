@@ -12,6 +12,9 @@ DB_USER = os.environ.get("BASE_USER") or os.environ.get("USER_BASE")
 DB_PASS = os.environ.get("BASE_PASS") or os.environ.get("CLAVE_BASE")
 DB_PORT = "6543"
 
+print("Usuario usado:", DB_USER)
+print("¿Hay contraseña?:", bool(DB_PASS))
+
 # 3. CONEXIÓN A LA BASE DE DATOS
 db = psycopg2.connect(
         host=DB_HOST, database=DB_NAME,
