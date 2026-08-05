@@ -6,7 +6,7 @@ import psycopg2
 DB_HOST = "aws-0-ca-central-1.pooler.supabase.com"
 DB_NAME = "postgres"
 DB_PORT = "6543"
-PROJECT_REF = "vlndghikrjvxmiibbqbo"
+PROJECT_REF = "dlejozthzgnbfbqjuejo"
 
 # 2. Lectura de variables de entorno
 RAW_USER = os.environ.get("BASE_USER") or os.environ.get("USER_BASE") or "postgres"
