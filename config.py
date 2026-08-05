@@ -3,7 +3,7 @@ import urllib.parse
 from db import Database
 
 # 1. DEBES DEFINIR LA VARIABLE PRIMERO
-DB_HOST = "db.dlejozthzgnbfbqjuejo.supabase.co"
+DB_HOST = "aws-0-ca-central-1.pooler.supabase.com"
 DB_NAME = "postgres"
 # Unificado con app.py: usamos las mismas variables de entorno (BASE_USER / BASE_PASS)
 # para no tener credenciales duplicadas en Railway.
