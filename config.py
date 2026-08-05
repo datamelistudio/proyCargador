@@ -3,13 +3,13 @@ import urllib.parse
 from db import Database
 
 # 1. DEBES DEFINIR LA VARIABLE PRIMERO
-DB_HOST = "aws-1-us-east-2.pooler.supabase.com"
+DB_HOST = "db.dlejozthzgnbfbqjuejo.supabase.co"
 DB_NAME = "postgres"
 # Unificado con app.py: usamos las mismas variables de entorno (BASE_USER / BASE_PASS)
 # para no tener credenciales duplicadas en Railway.
 DB_USER = os.environ.get("BASE_USER") or os.environ.get("USER_BASE")
 DB_PASS = os.environ.get("BASE_PASS") or os.environ.get("CLAVE_BASE")
-DB_PORT = "6543"
+DB_PORT = "5432"
 
 # 3. CONEXIÓN A LA BASE DE DATOS
 db = psycopg2.connect(
