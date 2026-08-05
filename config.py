@@ -31,7 +31,7 @@ print("¿Hay contraseña?:", bool(DB_PASS))
 db = psycopg2.connect(
     host=DB_HOST,
     database=DB_NAME,
-    user=DB_USER,
+    user="postgres.dlejozthzgnbfbqjuejo",
     password=RAW_PASS,  # En psycopg2.connect directo pasa la clave tal cual; si usas DSN en URI usa DB_PASS
     port=DB_PORT,
     connect_timeout=10,
