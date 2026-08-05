@@ -19,6 +19,8 @@ if "." not in RAW_USER:
 else:
     DB_USER = RAW_USER
 
+DB_USER="postgres.dlejozthzgnbfbqjuejo"
+
 # Escapar la contraseña si contiene caracteres especiales
 DB_PASS = urllib.parse.quote_plus(RAW_PASS)
 
