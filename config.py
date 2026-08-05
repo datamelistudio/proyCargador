@@ -5,7 +5,7 @@ import psycopg2
 # 1. Parámetros de la base de datos
 DB_HOST = "aws-0-ca-central-1.pooler.supabase.com"
 DB_NAME = "postgres"
-DB_PORT = "5432"
+DB_PORT = "6543"
 PROJECT_REF = "dlejozthzgnbfbqjuejo"
 
 # 2. Lectura de variables de entorno
