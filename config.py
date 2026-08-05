@@ -29,16 +29,22 @@ print("¿Hay contraseña?:", bool(DB_PASS))
 
 # 4. Conexión a la base de datos
 
+def conectar_supabase():
+    return psycopg2.connect(
+        host=DB_HOST, database=DB_NAME,
+        user=DB_USER, password=DB_PASS, port=DB_PORT,
+        connect_timeout=10,
+        sslmode="require",
+        options="-c search_path=public --project=vlndghikrjvxmiibbqbo"
+    )
+
 db = psycopg2.connect(
-    host=DB_HOST,
-    database=DB_NAME,
-    user="postgres.dlejozthzgnbfbqjuejo.tx", # El usuario largo correcto para el pooler
-    password=RAW_PASS,                     # Tu contraseña limpia (sin espacios)
-    port=DB_PORT,                          # 6543 para Transacción o 5432 para Sesión
-    connect_timeout=10,
-    sslmode="require",
-    options="-c search_path=public"        # Limpio, sin espacios iniciales ni flags de proyecto
-)
+        host=DB_HOST, database=DB_NAME,
+        user=postgres.dlejozthzgnbfbqjuejo.tx", password=DB_PASS, port=DB_PORT,
+        connect_timeout=10,
+        sslmode="require",
+        options="-c search_path=public --project=dlejozthzgnbfbqjuejo"
+
 
 
 # 5. Configuraciones de Mercado Libre
