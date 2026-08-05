@@ -1,6 +1,7 @@
 import os
 import urllib.parse
 from db import Database
+import psycopg2
 
 # 1. DEBES DEFINIR LA VARIABLE PRIMERO
 DB_HOST = "aws-0-ca-central-1.pooler.supabase.com"
