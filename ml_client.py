@@ -41,6 +41,14 @@ class MercadoLibreClient:
     def get_category(self, category_id):
         return self._get(f"/categories/{category_id}")
 
+    def discover_category(self, texto_busqueda):
+        """Dado un texto libre (ej: 'cajas de carton'), devuelve las
+        categorías/dominios sugeridos por ML, con su category_id."""
+        return self._get(
+            f"/sites/{self.site_id}/domain_discovery/search",
+            params={"q": texto_busqueda},
+        )
+
     def _resolve_product_to_item(self, product_id):
         """Un 'product_id' es un ID de catálogo (no de publicación). Lo resolvemos
         al item que gana el buy-box, que es el que se puede usar en /items."""
