@@ -32,7 +32,7 @@ print("¿Hay contraseña?:", bool(DB_PASS))
 db = psycopg2.connect(
     host=DB_HOST,
     database=DB_NAME,
-    user="postgres.dlejozthzgnbfbqjuejo", # El usuario largo correcto para el pooler
+    user="postgres.dlejozthzgnbfbqjuejo.tx", # El usuario largo correcto para el pooler
     password=RAW_PASS,                     # Tu contraseña limpia (sin espacios)
     port=DB_PORT,                          # 6543 para Transacción o 5432 para Sesión
     connect_timeout=10,
