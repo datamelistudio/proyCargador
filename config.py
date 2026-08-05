@@ -3,24 +3,22 @@ import urllib.parse
 from db import Database
 
 # 1. DEBES DEFINIR LA VARIABLE PRIMERO
-SUPABASE_DB_URL = os.getenv("SUPABASE_DB_URL")
-PROJECT_REF = os.getenv("PROJECT_REF")
-DB_PASSWORD = os.getenv("DB_PASSWORD")
-
-# 2. LUEGO HACES LA COMPROBACIÓN
-if SUPABASE_DB_URL:
-    dsn = SUPABASE_DB_URL
-elif PROJECT_REF and DB_PASSWORD:
-    password_escaped = urllib.parse.quote_plus(str(DB_PASSWORD))
-    dsn = f"postgresql://postgres:{password_escaped}@db.{PROJECT_REF}.supabase.co:5432/postgres"
-else:
-    raise ValueError(
-        "Falta configurar la variable de entorno SUPABASE_DB_URL "
-        "o las variables PROJECT_REF y DB_PASSWORD."
-    )
+DB_HOST = "aws-1-us-east-2.pooler.supabase.com"
+DB_NAME = "postgres"
+# Unificado con app.py: usamos las mismas variables de entorno (BASE_USER / BASE_PASS)
+# para no tener credenciales duplicadas en Railway.
+DB_USER = os.environ.get("BASE_USER") or os.environ.get("USER_BASE")
+DB_PASS = os.environ.get("BASE_PASS") or os.environ.get("CLAVE_BASE")
+DB_PORT = "6543"
 
 # 3. CONEXIÓN A LA BASE DE DATOS
-db = Database(dsn)
+db = psycopg2.connect(
+        host=DB_HOST, database=DB_NAME,
+        user=DB_USER, password=DB_PASS, port=DB_PORT,
+        connect_timeout=10,
+        sslmode="require",
+        options="-c search_path=public --project=vlndghikrjvxmiibbqbo"
+    )
 
 # 4. CONFIGURACIONES DE MERCADO LIBRE
 SITE_ID = os.getenv("SITE_ID", "MLA")
