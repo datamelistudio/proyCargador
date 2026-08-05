@@ -25,14 +25,16 @@ DB_USER="postgres.dlejozthzgnbfbqjuejo"
 
 DB_USER_ENC = urllib.parse.quote_plus(DB_USER)
 
+
+
+# Escapar la contraseña si contiene caracteres especiales
+DB_PASS = urllib.parse.quote_plus(RAW_PASS)
+
 SUPABASE_DB_URL = (
     f"postgresql://{DB_USER_ENC}:{DB_PASS}@{DB_HOST}:{DB_PORT}/{DB_NAME}"
     f"?sslmode=require&connect_timeout=10"
     f"&options=-c%20search_path%3Dpublic"
 )
-
-# Escapar la contraseña si contiene caracteres especiales
-DB_PASS = urllib.parse.quote_plus(RAW_PASS)
 
 print("Usuario usado:", DB_USER)
 print("¿Hay contraseña?:", bool(DB_PASS))
