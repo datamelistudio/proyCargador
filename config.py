@@ -35,7 +35,7 @@ db = psycopg2.connect(
         user="postgres.dlejozthzgnbfbqjuejo", password=DB_PASS, port=DB_PORT,
         connect_timeout=10,
         sslmode="require",
-        options="-c search_path=public --project="dlejozthzgnbfbqjuejo")
+        options="-c search_path=public --project=dlejozthzgnbfbqjuejo")
 
 
 
