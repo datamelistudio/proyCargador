@@ -17,7 +17,7 @@ db = psycopg2.connect(
         user=DB_USER, password=DB_PASS, port=DB_PORT,
         connect_timeout=10,
         sslmode="require",
-        options="-c search_path=public --project=vlndghikrjvxmiibbqbo"
+        options="-c search_path=public --project=dlejozthzgnbfbqjuejo"
     )
 
 # 4. CONFIGURACIONES DE MERCADO LIBRE
