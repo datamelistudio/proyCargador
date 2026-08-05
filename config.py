@@ -12,6 +12,8 @@ PROJECT_REF = "dlejozthzgnbfbqjuejo"
 RAW_USER = os.environ.get("BASE_USER") or os.environ.get("USER_BASE") or "postgres"
 RAW_PASS = os.environ.get("BASE_PASS") or os.environ.get("CLAVE_BASE") or ""
 
+
+
 # 3. Formateo correcto para el Pooler de Supabase
 # Si el usuario no trae la referencia del proyecto, se la adjuntamos automáticamente:
 if "." not in RAW_USER:
@@ -20,6 +22,14 @@ else:
     DB_USER = RAW_USER
 
 DB_USER="postgres.dlejozthzgnbfbqjuejo"
+
+DB_USER_ENC = urllib.parse.quote_plus(DB_USER)
+
+SUPABASE_DB_URL = (
+    f"postgresql://{DB_USER_ENC}:{DB_PASS}@{DB_HOST}:{DB_PORT}/{DB_NAME}"
+    f"?sslmode=require&connect_timeout=10"
+    f"&options=-c%20search_path%3Dpublic"
+)
 
 # Escapar la contraseña si contiene caracteres especiales
 DB_PASS = urllib.parse.quote_plus(RAW_PASS)
