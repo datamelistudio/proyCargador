@@ -9,7 +9,7 @@ DB_NAME = "postgres"
 # para no tener credenciales duplicadas en Railway.
 DB_USER = os.environ.get("BASE_USER") or os.environ.get("USER_BASE")
 DB_PASS = os.environ.get("BASE_PASS") or os.environ.get("CLAVE_BASE")
-DB_PORT = "5432"
+DB_PORT = "6543"
 
 # 3. CONEXIÓN A LA BASE DE DATOS
 db = psycopg2.connect(
